@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+---
+
+<BaseLayout
+  title="Projects — Your Name"
+  description="Things I've built: open source tools, side projects, and experiments."
+>
+  <section style="margin: 2.5rem 0;">
+    <h1 style="
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.5rem;
+    ">
+      Projects
+    </h1>
+    <p style="margin: 0 0 2rem; color: var(--color-muted); font-size: 0.9375rem;">
+      Open source tools, side projects, and things I've shipped.
+    </p>
+
+    <div>
+      {projects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

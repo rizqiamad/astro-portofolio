@@ -1,0 +1,134 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { featuredProjects } from '../data/projects';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const recentPosts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+---
+
+<BaseLayout
+  title="Hanif Ahmad — Developer"
+  description="Personal site and blog. I write about software, tools, and building things."
+>
+  <!-- Bio -->
+  <section style="margin: 2.5rem 0 3rem;">
+    <div style="
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    ">
+      <!-- Text -->
+      <div style="flex: 1; min-width: 240px;">
+        <h1 style="
+          font-family: var(--font-serif);
+          font-size: 1.875rem;
+          font-weight: 700;
+          letter-spacing: -0.035em;
+          margin: 0 0 1rem;
+          color: var(--color-text);
+          line-height: 1.2;
+        ">
+          Hi, I'm Hanif.
+        </h1>
+        <div style="font-size: 1rem; line-height: 1.7; color: var(--color-text);">
+          <p style="margin: 0 0 0.75rem;">
+            I'm a software engineer who cares about reliability, clean APIs, and shipping
+            things that actually work. I wrote and built some stuff online that you can check in this page.
+          </p>
+          <p style="margin: 0;">
+            These days i'm interested in building, designing, and shipping products. Still exploring and looking for something
+            actually work. You can find me on my <a target="_blank" href="https://github.com/rizqiamad">GitHub</a> or <a href="/projects">Twitter</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div style="flex-shrink: 0;">
+        <img
+          src="/avatar.png"
+          alt="Hanif Ahmad"
+          width="140"
+          height="140"
+          style="
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
+            object-fit: cover;
+            object-position: top center;
+            border: 1px solid var(--color-border);
+            display: block;
+          "
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Posts -->
+  <section style="margin-bottom: 3rem;">
+    <div style="
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.25rem;
+    ">
+      <h2 style="
+        font-family: var(--font-serif);
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 0;
+      ">
+        Writing
+      </h2>
+      <a href="/blog" style="font-size: 0.875rem; color: var(--color-muted);">All posts →</a>
+    </div>
+
+    <div>
+      {recentPosts.map((post) => (
+        <PostCard
+          title={post.data.title}
+          date={post.data.date}
+          description={post.data.description}
+          slug={post.id}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section style="margin-bottom: 3rem;">
+    <div style="
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.25rem;
+    ">
+      <h2 style="
+        font-family: var(--font-serif);
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 0;
+      ">
+        Projects
+      </h2>
+      <a href="/projects" style="font-size: 0.875rem; color: var(--color-muted);">All projects →</a>
+    </div>
+
+    <div>
+      {featuredProjects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

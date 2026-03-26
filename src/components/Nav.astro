@@ -1,0 +1,55 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/projects', label: 'Projects' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav style="
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+">
+  <a
+    href="/"
+    style="font-family: var(--font-serif); font-weight: 600; font-size: 1rem; color: var(--color-text); text-decoration: none; letter-spacing: -0.01em;"
+  >
+    Hanif Ahmad
+  </a>
+
+  <ul style="
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+  ">
+    {navLinks.map(({ href, label }) => {
+      const isActive = href === '/'
+        ? currentPath === '/'
+        : currentPath.startsWith(href);
+      return (
+        <li>
+          <a
+            href={href}
+            style={`
+              font-size: 0.9rem;
+              font-weight: 500;
+              color: ${isActive ? 'var(--color-text)' : 'var(--color-muted)'};
+              text-decoration: none;
+              transition: color 0.15s ease;
+            `}
+          >
+            {label}
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>
