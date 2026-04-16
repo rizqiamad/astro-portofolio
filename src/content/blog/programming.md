@@ -16,3 +16,9 @@ As a person who knows nothing about programming, it's kind of overwhelming a lit
 After a year i decided to resign from my college for some reasons. Then i tried another field like digital marketing and copywriting, and still didn't like both of them. In this point i felt like i wasted a lot of my time trying around something that i couldn't give enough focus to understand and master it. That's why i took a step back to understand again about programming by joining web programming program in the bootcamp.
 
 This bootcamp became my turning point understanding programming. I learnt a lot there with my coach and friends, something about programming that never linked in my mind before, becoming something that feels really enjoyable to learn and somehow it linked now in my mind. Then i realized that i just have to focus on certain thing before it can be stuck in my mind.
+
+## Deep dive into programming
+
+After graduating from the bootcamp and try to build several apps and something interesting to me, i see a wide world that already exists in programming. Communities which support each other, open source projects, free packages, and many more. It's amazing how programmer supports programmer, hence junior programmer like me can fit into the world without any hesitation. We see how facebook built impactful framework like react, and it's accessible to everyone. And because of that i can make my own project and money lol.
+
+I'm so grateful to be the part of this society and that's why i want to try to learn and study everything. By seeing the dynamic, i realized that programming took the special part of this world, and i want to be the part of it. Everything from finance, f&b, till governance need program to solve the problems and keep everything running smoothly. 
