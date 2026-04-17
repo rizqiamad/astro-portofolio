@@ -1,7 +1,7 @@
 ---
 title: 'Introduction'
 date: 2026-03-11
-description: "After years of neglect, I rewrote my personal site using Astro. Here's what changed, what I learned, and why static sites are having a very justified moment."
+description: "After years of being confused, finally i started to build my own website"
 tags: ['intruduction', 'astro', 'web', 'Hanif']
 ---
 
@@ -50,6 +50,6 @@ I don't have analytics or comments for these pages. I think everyone who build s
 
 ## Next
 
-I'll here when i have something to say or release from my head. I have bad habbit of thinking, that i can and always think several things at the same time, and it bothers me already. Where i can focus and do something more productive, i still stuck in the situtation that bring me to unproductive thing.
+I'll here when i have something to say or release from my head. I have bad habbit of thinking that i can and always think several things at the same time, and it bothers me already. Where i can focus and do something more productive, i still stuck in the situtation that bring me to unproductive thing.
 
 Thanks for everyone here who spend his leasure time for reading this page. Maybe we can do something together in the other destiny.
